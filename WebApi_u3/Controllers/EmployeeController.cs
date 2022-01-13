@@ -13,11 +13,11 @@ namespace WebApi_u3.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        //[HttpGet]
-        //public List<EmployeeListDTO> List()
-        //{
-        //    var service = new EmployeeService();
-        //    return service.GetInfo();
-        //}
+        [HttpGet]
+        public List<CountEmployeeDTO> List()
+        {
+            var service = new EmployeeService();
+            return service.GetInfo();
+        }
     }
 }

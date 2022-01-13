@@ -15,8 +15,8 @@ namespace Service
             List<ProductDTO> pDto = new();
 
             using (var context = new StoreContext())
-            {                
-                var result= context.Products
+            {
+                var result = context.Products
                  .OrderBy(x => x.Quantity)
                  .ToList();
                 foreach (var item in result)
@@ -24,7 +24,7 @@ namespace Service
                     pDto.Add(new ProductDTO() { Name = item.Name, Quantity = item.Quantity });
                 }
                 return pDto;
-            }       
+            }
         }
         public void ChangeQuantity(int barcode, int newQuantity)
         {
