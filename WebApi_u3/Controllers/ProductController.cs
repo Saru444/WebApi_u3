@@ -21,7 +21,6 @@ namespace WebApi_u3.Controllers
             var service = new ProductService();
 
             return service.ListAllProducts();
-
         }
         [HttpPut("update/{barcode}")]
         public void Update(int barcode, int newQuantity)

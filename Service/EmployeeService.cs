@@ -13,25 +13,9 @@ namespace Service
     {
         public List<CountEmployeeDTO> GetInfo()
         {
-            //List<CountEmployeeDTO> cDto = new();
-            //using (var context = new StoreContext())
-            //{
-            //    var result = new List<CountEmployeeDTO>();
-            //    result.EployeeList = new List<EmployeeListDTO>();
-            //    result.EmployeeCount = context.Employees.Count();
-            //           context.Employees
-            //         .Include(d => d.Departments)
-            //         .Select(x => new EmployeeListDTO
-            //         {
-            //             Name = x.Name,
-            //             ResponsiableForDepartment = context.Departments.Any(d => d.EmployeeRefId == x.ID)
-            //         })
-            //         .ToList();
-            //}
             using (var context = new StoreContext())
             {
                 var result = new List<CountEmployeeDTO>();
-                result.EmployeeList = new List<EmployeeListDTO>();
                 result.EmployeeCount = context.Employees.Count();
                 var staff = context.Employees
                     .Include(e => e.Departments)
@@ -46,7 +30,6 @@ namespace Service
                     });
                 }
                 return result;
-
             }
 
         }

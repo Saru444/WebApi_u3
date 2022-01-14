@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 namespace Service.DTO
 {
     public class CountEmployeeDTO
-    {
-        public List<EmployeeListDTO> EmployeeList { get; set; }
+    {       
         public int EmployeeCount{ get; set; }
+        public List<EmployeeListDTO> EmployeeList { get; set; }
+        public CountEmployeeDTO()
+        {
+            this.EmployeeList = new();
+        }
     }
 }
