@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Service.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace Service
 {
@@ -46,21 +47,25 @@ namespace Service
             result.Quantity = newQuantity;
             context.SaveChanges();
         }
-        public void GetProductInfo(string department, int count)
+        public List<ProductDTO> GetProductInfo(string department, int count)
         {
-            //List<ProductDTO> proDto = new();
+            List<ProductDTO> proDto = new();
             using (var context = new StoreContext())
             {
-                //var result = context.Departments
-                //    .Include(x => x.DepartmentProduct)
-                //    .First(x => x.Quantity <= count)
-                //    .Select(x => new ProductDTO
-                //    {
-                //        Department = x.DepartmentName,
-                //        Count = x.Quantity
-                //    })
-                //    .ToList();
-
+                var result = context.Products
+                    .Include(x => x.DepartmentProducts)
+                    .First(x => x.Quantity <= count)
+                    .ToList();
+                foreach (var item in result)
+                {
+                    proDto.Add(new ProductDTO 
+                    { 
+                        Department = item.DepartmentName, 
+                        Name=item.Name,
+                        Count = item.Quantity 
+                    });
+                }
+                return proDto;
 
             }
         }

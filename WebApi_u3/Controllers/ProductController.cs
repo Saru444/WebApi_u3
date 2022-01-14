@@ -29,10 +29,10 @@ namespace WebApi_u3.Controllers
             service.ChangeQuantity(barcode, newQuantity);
         }
         [HttpPost("list")]
-        public void GetList(ProductDTO pDto)
+        public List<ProductDTO> ListProducts(string department, int count)
         {
             var service = new ProductService();
-            
+            return service.GetProductInfo();           
         }
     }
 }

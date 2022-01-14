@@ -9,6 +9,7 @@ namespace Service.DTO
     public class ProductDTO
     {
         public string Department { get; set; }
+        public string Name { get; set; }
         public int Count { get; set; }
     }
 }
