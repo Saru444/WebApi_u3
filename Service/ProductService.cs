@@ -49,7 +49,6 @@ namespace Service
         }
         public List<ProductDTO> GetProductInfo(string department, int count)
         {
-            List<ProductDTO> proDto = new();
             using (var context = new StoreContext())
             {
                 var result = context.Products
