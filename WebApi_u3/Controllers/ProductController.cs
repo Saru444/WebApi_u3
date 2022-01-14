@@ -27,6 +27,12 @@ namespace WebApi_u3.Controllers
         {
             var service = new ProductService();
             service.ChangeQuantity(barcode, newQuantity);
-        }      
+        }
+        [HttpPost("list")]
+        public void GetList(ProductDTO pDto)
+        {
+            var service = new ProductService();
+            
+        }
     }
 }

@@ -46,5 +46,22 @@ namespace Service
             result.Quantity = newQuantity;
             context.SaveChanges();
         }
+        public void GetProductInfo(string department,int count)
+        {
+            using (var context = new StoreContext())
+            {
+                var result = context.Departments
+                    .Include(x => x.DepartmentProduct)
+                    .First(x => x.Quantity <= count)
+                    .Select(x => new ProductDTO
+                    {
+                        Department = x.DepartmentName,
+                        Count = x.Quantity
+                    })
+                    .ToList();
+
+
+            }
+        }
     }
 }
