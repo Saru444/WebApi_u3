@@ -54,6 +54,7 @@ namespace Service
             {
                 var result = context.Products
                     .Include(x => x.DepartmentProducts)
+                    .ThenInclude(x => x.Department)
                     .First(x => x.Quantity <= count)
                     .ToList();
                 foreach (var item in result)
