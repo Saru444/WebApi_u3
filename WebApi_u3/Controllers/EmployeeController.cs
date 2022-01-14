@@ -14,7 +14,7 @@ namespace WebApi_u3.Controllers
     public class EmployeeController : ControllerBase
     {
         [HttpGet]
-        public List<CountEmployeeDTO> List()
+        public CountEmployeeDTO List()
         {
             var service = new EmployeeService();
             return service.GetInfo();

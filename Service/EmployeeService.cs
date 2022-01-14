@@ -11,11 +11,11 @@ namespace Service
 {
     public class EmployeeService
     {
-        public List<CountEmployeeDTO> GetInfo()
+        public CountEmployeeDTO GetInfo()
         {
             using (var context = new StoreContext())
             {
-                var result = new List<CountEmployeeDTO>();
+                var result = new CountEmployeeDTO();
                 result.EmployeeCount = context.Employees.Count();
                 var staff = context.Employees
                     .Include(e => e.Departments)
@@ -29,10 +29,8 @@ namespace Service
 
                     });
                 }
-                return result;
+                return result;          
             }
-
         }
-
     }
 }
