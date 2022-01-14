@@ -10,18 +10,31 @@ namespace Service
 {
     public class ProductService
     {
-        public List<ProductDTO> ListAllProducts()
+        public List<ProductStatusDTO> ListAllProducts()
         {
-            List<ProductDTO> pDto = new();
-
+            List<ProductStatusDTO> pDto = new();
+            
             using (var context = new StoreContext())
             {
                 var result = context.Products
                  .OrderBy(x => x.Quantity)
                  .ToList();
+                string status = "OK";
                 foreach (var item in result)
                 {
-                    pDto.Add(new ProductDTO() { Name = item.Name, Quantity = item.Quantity });
+                    if (item.Quantity > 3)
+                    {
+                        status = "OK";
+                    }
+                    else if (item.Quantity < 3 && item.Quantity > 1)
+                    {
+                        status = "Snart slut";
+                    }
+                    else if(item.Quantity==0)
+                    {
+                        status = "Slut";
+                    }
+                    pDto.Add(new ProductStatusDTO() { Name = item.Name, Quantity = item.Quantity, Status = status });
                 }
                 return pDto;
             }

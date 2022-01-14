@@ -9,7 +9,11 @@ namespace Service.DTO
     public class ProductStatusDTO
     {
         public string Name { get; set; }
-        public int Stock { get; set; }
+        public int Quantity { get; set; }
         public string Status { get; set; }
+        public ProductStatusDTO()
+        {
+            this.Status = Status;
+        }
     }
 }

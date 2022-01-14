@@ -16,7 +16,7 @@ namespace WebApi_u3.Controllers
     public class ProductController : ControllerBase
     {
         [HttpGet("count")]
-        public List<ProductDTO> List()
+        public List<ProductStatusDTO> List()
         {
             var service = new ProductService();
 
