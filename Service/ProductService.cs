@@ -13,7 +13,7 @@ namespace Service
         public List<ProductStatusDTO> ListAllProducts()
         {
             List<ProductStatusDTO> pDto = new();
-            
+
             using (var context = new StoreContext())
             {
                 var result = context.Products
@@ -30,7 +30,7 @@ namespace Service
                     {
                         status = "Snart slut";
                     }
-                    else if(item.Quantity==0)
+                    else if (item.Quantity == 0)
                     {
                         status = "Slut";
                     }
@@ -46,19 +46,20 @@ namespace Service
             result.Quantity = newQuantity;
             context.SaveChanges();
         }
-        public void GetProductInfo(string department,int count)
+        public void GetProductInfo(string department, int count)
         {
+            //List<ProductDTO> proDto = new();
             using (var context = new StoreContext())
             {
-                var result = context.Departments
-                    .Include(x => x.DepartmentProduct)
-                    .First(x => x.Quantity <= count)
-                    .Select(x => new ProductDTO
-                    {
-                        Department = x.DepartmentName,
-                        Count = x.Quantity
-                    })
-                    .ToList();
+                //var result = context.Departments
+                //    .Include(x => x.DepartmentProduct)
+                //    .First(x => x.Quantity <= count)
+                //    .Select(x => new ProductDTO
+                //    {
+                //        Department = x.DepartmentName,
+                //        Count = x.Quantity
+                //    })
+                //    .ToList();
 
 
             }

@@ -18,6 +18,7 @@ namespace DAL
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<EmployeeMail> EmployeeMails { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<DepartmentProduct> DepartmentProducts{ get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test")
