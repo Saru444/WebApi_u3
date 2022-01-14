@@ -32,7 +32,7 @@ namespace WebApi_u3.Controllers
         public List<ProductDTO> ListProducts(string department, int count)
         {
             var service = new ProductService();
-            return service.GetProductInfo();           
+            return service.GetProductInfo(department,count);           
         }
     }
 }

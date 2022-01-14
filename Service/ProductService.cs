@@ -53,21 +53,16 @@ namespace Service
             using (var context = new StoreContext())
             {
                 var result = context.Products
-                    .Include(x => x.DepartmentProducts)
-                    .ThenInclude(x => x.Department)
-                    .First(x => x.Quantity <= count)
-                    .ToList();
-                foreach (var item in result)
-                {
-                    proDto.Add(new ProductDTO 
-                    { 
-                        Department = item.DepartmentName, 
-                        Name=item.Name,
-                        Count = item.Quantity 
-                    });
-                }
+                    .Where(x => x.Quantity <= count)
+                    .Include(x => x.Departments)                  
+                    .Select(x => new ProductDTO
+                     {
+                        Department = x.Name,
+                              Name=x.Name,
+                              Count = x.Quantity 
+                    })
+                .ToList();
                 return proDto;
-
             }
         }
     }
