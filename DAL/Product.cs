@@ -14,7 +14,9 @@ namespace DAL
         public int Barcode { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
-        public double UnitPrice { get; set; }
+
+        [Column(TypeName = "decimal(5, 2)")]
+        public decimal UnitPrice { get; set; }
         [Column(TypeName = "date")]
         public DateTime? ExpirationDate { get; set; }
         [ForeignKey("Employee")]

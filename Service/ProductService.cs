@@ -27,7 +27,7 @@ namespace Service
                     {
                         status = "OK";
                     }
-                    else if (item.Quantity < 3 && item.Quantity > 1)
+                    else if (item.Quantity <=3 && item.Quantity >= 1)
                     {
                         status = "Snart slut";
                     }
@@ -40,14 +40,14 @@ namespace Service
                 return pDto;
             }
         }
-        public void ChangeQuantity(int barcode, int newQuantity)
+        public void ChangeQuantity(UpdateQuantity updateQuantity)
         {
             using var context = new StoreContext();
-            var result = context.Products.First(x => x.Barcode == barcode);
-            result.Quantity = newQuantity;
+            var result = context.Products.First(x => x.Barcode == updateQuantity.Barcode);
+            result.Quantity = updateQuantity.NewQuantity;
             context.SaveChanges();
         }
-        public List<ProductDTO> GetProductInfo(string department, int count)
+         public List<ProductDTO> GetProductInfo(string department, int count)
         {
             using (var context = new StoreContext())
             {

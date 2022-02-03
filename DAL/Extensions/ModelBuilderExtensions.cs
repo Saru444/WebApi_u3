@@ -46,24 +46,24 @@ namespace DAL.Extensions
                 );
 
             builder.Entity<Product>().HasData(
-                new Product { Barcode = 1010, Name = "Milk", Quantity = 2, UnitPrice = 13.25, ExpirationDate = new DateTime(2022, 01, 20), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
-                new Product { Barcode = 1015, Name = "Butter", Quantity = 3, UnitPrice = 41.33, ExpirationDate = new DateTime(2022, 02, 03), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
-                new Product { Barcode = 1018, Name = "Cheese", Quantity = 10, UnitPrice = 89.90, ExpirationDate = new DateTime(2022, 02, 05), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 3 },
-                new Product { Barcode = 1023, Name = "Apple", Quantity = 12, UnitPrice = 6.50, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 3 },
-                new Product { Barcode = 1025, Name = "Pear", Quantity = 15, UnitPrice = 4.50, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 1 },
-                new Product { Barcode = 1026, Name = "Orange", Quantity = 20, UnitPrice = 7.35, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 1 },
-                new Product { Barcode = 1032, Name = "Flour", Quantity = 8, UnitPrice = 18.85, ExpirationDate = new DateTime(2922, 05, 06), InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 2 },
-                new Product { Barcode = 1035, Name = "Sugar", Quantity = 5, UnitPrice = 11.55, ExpirationDate = null, InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 1 },
-                new Product { Barcode = 1038, Name = "Fruit tea", Quantity = 11, UnitPrice = 28.95, ExpirationDate = new DateTime(2022, 12, 20), InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 1 },
-                new Product { Barcode = 1044, Name = "Cola", Quantity = 25, UnitPrice = 14.50, ExpirationDate = new DateTime(2023, 02, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 05), CampaignId = 4 },
-                new Product { Barcode = 1048, Name = "Red bull", Quantity = 6, UnitPrice = 18.50, ExpirationDate = new DateTime(2023, 01, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 05), CampaignId = 4 },
-                new Product { Barcode = 1046, Name = "Fanta", Quantity = 8, UnitPrice = 14.50, ExpirationDate = new DateTime(2023, 02, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 25), CampaignId = 1 },
-                new Product { Barcode = 1055, Name = "Toast", Quantity = 5, UnitPrice = 25.68, ExpirationDate = new DateTime(2022, 01, 20), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 07), CampaignId = 1 },
-                new Product { Barcode = 1057, Name = "Baguette", Quantity = 9, UnitPrice = 18.90, ExpirationDate = new DateTime(2022, 01, 15), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
-                new Product { Barcode = 1062, Name = "Croissant", Quantity = 6, UnitPrice = 10.00, ExpirationDate = new DateTime(2022, 01, 14), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
-                new Product { Barcode = 1068, Name = "Beef", Quantity = 12, UnitPrice = 396.90, ExpirationDate = new DateTime(2022, 01, 14), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 2 },
-                new Product { Barcode = 1073, Name = "Pork", Quantity = 8, UnitPrice = 76.88, ExpirationDate = new DateTime(2022, 01, 15), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 1 },
-                new Product { Barcode = 1077, Name = "Chicken", Quantity = 7, UnitPrice = 55.50, ExpirationDate = new DateTime(2022, 01, 06), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 2 }
+                new Product { Barcode = 1010, Name = "Milk", Quantity = 2, UnitPrice = 13.25m, ExpirationDate = new DateTime(2022, 01, 20), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
+                new Product { Barcode = 1015, Name = "Butter", Quantity = 3, UnitPrice = 41.33m, ExpirationDate = new DateTime(2022, 02, 03), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
+                new Product { Barcode = 1018, Name = "Cheese", Quantity = 10, UnitPrice = 89.90m, ExpirationDate = new DateTime(2022, 02, 05), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 3 },
+                new Product { Barcode = 1023, Name = "Apple", Quantity = 12, UnitPrice = 6.50m, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 3 },
+                new Product { Barcode = 1025, Name = "Pear", Quantity = 15, UnitPrice = 4.50m, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 1 },
+                new Product { Barcode = 1026, Name = "Orange", Quantity = 20, UnitPrice = 7.35m, ExpirationDate = null, InventoriedID = 2, InventoriedDate = new DateTime(2022, 01, 09), CampaignId = 1 },
+                new Product { Barcode = 1032, Name = "Flour", Quantity = 8, UnitPrice = 18.85m, ExpirationDate = new DateTime(2922, 05, 06), InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 2 },
+                new Product { Barcode = 1035, Name = "Sugar", Quantity = 5, UnitPrice = 11.55m, ExpirationDate = null, InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 1 },
+                new Product { Barcode = 1038, Name = "Fruit tea", Quantity = 11, UnitPrice = 28.95m, ExpirationDate = new DateTime(2022, 12, 20), InventoriedID = 3, InventoriedDate = new DateTime(2021, 12, 23), CampaignId = 1 },
+                new Product { Barcode = 1044, Name = "Cola", Quantity = 25, UnitPrice = 14.50m, ExpirationDate = new DateTime(2023, 02, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 05), CampaignId = 4 },
+                new Product { Barcode = 1048, Name = "Red bull", Quantity = 6, UnitPrice = 18.50m, ExpirationDate = new DateTime(2023, 01, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 05), CampaignId = 4 },
+                new Product { Barcode = 1046, Name = "Fanta", Quantity = 8, UnitPrice = 14.50m, ExpirationDate = new DateTime(2023, 02, 02), InventoriedID = 5, InventoriedDate = new DateTime(2021, 12, 25), CampaignId = 1 },
+                new Product { Barcode = 1055, Name = "Toast", Quantity = 5, UnitPrice = 25.68m, ExpirationDate = new DateTime(2022, 01, 20), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 07), CampaignId = 1 },
+                new Product { Barcode = 1057, Name = "Baguette", Quantity = 9, UnitPrice = 18.90m, ExpirationDate = new DateTime(2022, 01, 15), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
+                new Product { Barcode = 1062, Name = "Croissant", Quantity = 6, UnitPrice = 10.00m, ExpirationDate = new DateTime(2022, 01, 14), InventoriedID = 4, InventoriedDate = new DateTime(2022, 01, 10), CampaignId = 1 },
+                new Product { Barcode = 1068, Name = "Beef", Quantity = 12, UnitPrice = 396.90m, ExpirationDate = new DateTime(2022, 01, 14), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 2 },
+                new Product { Barcode = 1073, Name = "Pork", Quantity = 8, UnitPrice = 76.88m, ExpirationDate = new DateTime(2022, 01, 15), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 1 },
+                new Product { Barcode = 1077, Name = "Chicken", Quantity = 7, UnitPrice = 55.50m, ExpirationDate = new DateTime(2022, 01, 06), InventoriedID = 2, InventoriedDate = new DateTime(2021, 12, 30), CampaignId = 2 }
                 );
 
             builder.Entity<DepartmentProduct>().HasData(

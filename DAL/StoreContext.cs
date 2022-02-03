@@ -27,14 +27,17 @@ namespace DAL
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>().HasIndex(e => e.PersonNumber).IsUnique();
+
             modelBuilder.Entity<Employee>()
                 .HasOne(em => em.Trainer)
                 .WithMany(e => e.Staffs)
                 .HasForeignKey(e => e.TrainerID)
                 .OnDelete(DeleteBehavior.NoAction);
-
+         
             modelBuilder.Entity<EmployeeMail>().HasKey(em => new { em.Email, em.EmployeeId });
 
+           
             modelBuilder.Entity<Ingredient>().HasKey(i => new { i.Contains, i.ProductBarcode });
 
             modelBuilder.Entity<DepartmentProduct>().HasKey(i => new { i.DepartmentName, i.ProductBarcode });

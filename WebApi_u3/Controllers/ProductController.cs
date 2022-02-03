@@ -22,13 +22,13 @@ namespace WebApi_u3.Controllers
 
             return service.ListAllProducts();
         }
-        [HttpPut("update/{barcode}")]
-        public void Update(int barcode, int newQuantity)
+        [HttpPost("update")]
+        public void Update(UpdateQuantity updateQuantity)
         {
             var service = new ProductService();
-            service.ChangeQuantity(barcode, newQuantity);
+            service.ChangeQuantity(updateQuantity);
         }
-        [HttpPost("list")]
+        [HttpGet("list")]
         public List<ProductDTO> ListProducts(string department, int count)
         {
             var service = new ProductService();
